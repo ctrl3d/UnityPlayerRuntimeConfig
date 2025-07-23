@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace work.ctrl3d
 {
@@ -14,7 +13,7 @@ namespace work.ctrl3d
         public WindowConfig window;
     }
 
-    
+
     [Serializable]
     public class ApplicationConfig
     {
@@ -60,5 +59,4 @@ namespace work.ctrl3d
         public bool popupWindow;
         public string zOrder = "TOP";
     }
-
 }
