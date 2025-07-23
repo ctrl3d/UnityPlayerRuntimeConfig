@@ -1,0 +1,24 @@
+﻿{
+  "name": "work.ctrl3d.unity-player-runtime-config",
+  "version": "0.1.0",
+  "displayName": "UnityPlayerRuntimeConfig",
+  "description": "",
+  "unity": "2022.3",
+  "documentationUrl": "https://ctrl3d.github.io/UnityPlayerRuntimeConfig",
+  "changelogUrl": "https://github.com/ctrl3d/UnityPlayerRuntimeConfig/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ctrl3d/UnityPlayerRuntimeConfig/blob/main/LICENSE",
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  },
+  "keywords": [
+    "unity",
+    "runtime",
+    "config",
+    "windows"
+  ],
+  "author": {
+    "name": "Seungmin Lee",
+    "email": "ctrl3d@gmail.com",
+    "url": "https://ctrl3d.work"
+  }
+}
