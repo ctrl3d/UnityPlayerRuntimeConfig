@@ -149,6 +149,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "work.ctrl3d.json-config": {
+      "version": "https://github.com/ctrl3d/JsonConfig.git?path=Assets/JsonConfig",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.2.1"
+      },
+      "hash": "cf574c46e2a85bf5cf2ef24793cdbc9a7d88b879"
+    },
     "work.ctrl3d.win-util": {
       "version": "https://github.com/ctrl3d/WinUtil.git?path=Assets/WinUtil",
       "depth": 0,

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 
 namespace work.ctrl3d
@@ -7,14 +8,15 @@ namespace work.ctrl3d
     {
         public static void Apply()
         {
-            RuntimeConfigManager.Load();
-
-            var appConfig = RuntimeConfigManager.GetApplicationConfig();
-            var screenConfig = RuntimeConfigManager.GetScreenConfig();
-            var qualityConfig = RuntimeConfigManager.GetQualityConfig();
-            var audioConfig = RuntimeConfigManager.GetAudioConfig();
-            var cameraConfig = RuntimeConfigManager.GetCameraConfig();
-            var windowConfig = RuntimeConfigManager.GetWindowConfig();
+            var runtimeConfigPath = Path.Combine(Application.dataPath, "UnityPlayerRuntimeConfig.json");
+            var runtimeConfig = new JsonConfig<RuntimeConfig>(runtimeConfigPath).Load().Data;
+            
+            var appConfig = runtimeConfig.application;
+            var screenConfig = runtimeConfig.screen;
+            var qualityConfig = runtimeConfig.quality;
+            var audioConfig = runtimeConfig.audio;
+            var cameraConfig = runtimeConfig.camera;
+            var windowConfig = runtimeConfig.window;
             
             // Application
             Application.runInBackground = appConfig.runInBackground;

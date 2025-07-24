@@ -3,16 +3,15 @@
 namespace work.ctrl3d
 {
     [Serializable]
-    public class RuntimeConfigData
+    public class RuntimeConfig
     {
-        public ApplicationConfig application;
-        public ScreenConfig screen;
-        public QualityConfig quality;
-        public AudioConfig audio;
-        public CameraConfig camera;
-        public WindowConfig window;
+        public ApplicationConfig application = new();
+        public ScreenConfig screen = new();
+        public QualityConfig quality = new();
+        public AudioConfig audio = new();
+        public CameraConfig camera = new();
+        public WindowConfig window = new();
     }
-
 
     [Serializable]
     public class ApplicationConfig
