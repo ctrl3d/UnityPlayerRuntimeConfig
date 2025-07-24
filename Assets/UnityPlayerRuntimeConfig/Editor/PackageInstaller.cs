@@ -13,11 +13,17 @@ namespace work.ctrl3d.UnityPlayerRuntimeConfig
     {
         private const string WinUtilName = "work.ctrl3d.win-util";
         private const string WinUtilGitUrl = "https://github.com/ctrl3d/WinUtil.git?path=Assets/WinUtil";
+
+        private const string JsonConfigName = "work.ctrl3d.json-config";
+        private const string JsonConfigGitUrl = "https://github.com/ctrl3d/JsonConfig.git?path=Assets/JsonConfig";
         
         static PackageInstaller()
         {
             var isWinUtilInstalled = CheckPackageInstalled(WinUtilName);
             if (!isWinUtilInstalled) AddGitPackage(WinUtilName, WinUtilGitUrl);
+            
+            var isJsonConfigInstalled = CheckPackageInstalled(JsonConfigName);
+            if (!isJsonConfigInstalled) AddGitPackage(JsonConfigName, JsonConfigGitUrl);
         }
         
         private static void AddGitPackage(string packageName, string gitUrl)
