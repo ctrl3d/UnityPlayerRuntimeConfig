@@ -17,6 +17,7 @@ namespace work.ctrl3d
             var audioConfig = runtimeConfig.audio;
             var cameraConfig = runtimeConfig.camera;
             var windowConfig = runtimeConfig.window;
+            var cursorConfig = runtimeConfig.cursor;
             
             // Application
             Application.runInBackground = appConfig.runInBackground;
@@ -104,6 +105,9 @@ namespace work.ctrl3d
             }
     #endif
 #endif
+            
+            // Cursor
+            Cursor.visible = cursorConfig.visible;
         }
     }
 }

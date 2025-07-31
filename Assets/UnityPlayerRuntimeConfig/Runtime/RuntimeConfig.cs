@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace work.ctrl3d
 {
@@ -11,6 +12,7 @@ namespace work.ctrl3d
         public AudioConfig audio = new();
         public CameraConfig camera = new();
         public WindowConfig window = new();
+        public CursorConfig cursor = new();
     }
 
     [Serializable]
@@ -57,5 +59,11 @@ namespace work.ctrl3d
     {
         public bool popupWindow;
         public string zOrder = "TOP";
+    }
+
+    [Serializable]
+    public class CursorConfig
+    {
+        public bool visible;
     }
 }
