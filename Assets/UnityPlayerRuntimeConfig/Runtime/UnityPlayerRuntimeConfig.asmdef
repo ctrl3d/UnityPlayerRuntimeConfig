@@ -3,7 +3,6 @@
     "rootNamespace": "work.ctrl3d",
     "references": [
         "GUID:0b0ded43bf42b614ab93ea6ebf471de0",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:56293a2b447f6ea42b729f7f0e65cbdc"
     ],
     "includePlatforms": [],
@@ -15,9 +14,14 @@
     "defineConstraints": [],
     "versionDefines": [
         {
-            "name": "com.cysharp.unitask",
+            "name": "work.ctrl3d.win-util",
             "expression": "",
-            "define": "UNITASK_SUPPORT"
+            "define": "USE_WINUTIL"
+        },
+        {
+            "name": "work.ctrl3d.json-config",
+            "expression": "",
+            "define": "USE_JSONCONFIG"
         }
     ],
     "noEngineReferences": false

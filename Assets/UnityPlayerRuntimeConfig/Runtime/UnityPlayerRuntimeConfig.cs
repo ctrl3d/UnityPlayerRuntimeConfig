@@ -1,3 +1,4 @@
+#if USE_JSONCONFIG
 using System;
 using System.IO;
 using UnityEngine;
@@ -111,3 +112,4 @@ namespace work.ctrl3d
         }
     }
 }
+#endif
