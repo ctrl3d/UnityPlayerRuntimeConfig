@@ -30,7 +30,10 @@ namespace work.ctrl3d
         public int y;
         public int width = 1280;
         public int height = 720;
+        public float brightness = 1f;
         public bool fullScreen;
+        public int orientation = 1;
+        public int sleepTimeout = -2;
     }
 
     [Serializable]

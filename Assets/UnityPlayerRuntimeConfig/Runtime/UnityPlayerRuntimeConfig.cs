@@ -1,5 +1,4 @@
 #if USE_JSONCONFIG
-using System;
 using System.IO;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace work.ctrl3d
         {
             var runtimeConfigPath = Path.Combine(Application.dataPath, "UnityPlayerRuntimeConfig.json");
             var runtimeConfig = new JsonConfig<RuntimeConfig>(runtimeConfigPath).Load().Data;
-            
+
             var appConfig = runtimeConfig.application;
             var screenConfig = runtimeConfig.screen;
             var qualityConfig = runtimeConfig.quality;
@@ -19,14 +18,17 @@ namespace work.ctrl3d
             var cameraConfig = runtimeConfig.camera;
             var windowConfig = runtimeConfig.window;
             var cursorConfig = runtimeConfig.cursor;
-            
+
             // Application
             Application.runInBackground = appConfig.runInBackground;
             Application.targetFrameRate = appConfig.targetFrameRate;
             Application.backgroundLoadingPriority = (ThreadPriority)appConfig.backgroundLoadingPriority;
 
             // Screen
+            Screen.brightness = screenConfig.brightness;
             Screen.fullScreen = screenConfig.fullScreen;
+            Screen.orientation = (ScreenOrientation)screenConfig.orientation;
+            Screen.sleepTimeout = screenConfig.sleepTimeout;
 
             // Quality
             QualitySettings.anisotropicFiltering = (AnisotropicFiltering)qualityConfig.anisotropicFiltering;
@@ -41,7 +43,7 @@ namespace work.ctrl3d
             if (Camera.main != null)
             {
                 Camera.main.clearFlags = (CameraClearFlags)cameraConfig.clearFlags;
-                
+
                 if (ColorUtility.TryParseHtmlString(cameraConfig.backgroundColor, out var backgroundColor))
                 {
                     Camera.main.backgroundColor = backgroundColor;
@@ -120,7 +122,7 @@ namespace work.ctrl3d
             }
     #endif
 #endif
-            
+
             // Cursor
             Cursor.visible = cursorConfig.visible;
         }
