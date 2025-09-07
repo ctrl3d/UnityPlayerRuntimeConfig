@@ -7,5 +7,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         UnityPlayerRuntimeConfig.Apply();
+
+        Debug.Log("!!" + QualitySettings.anisotropicFiltering);
     }
 }

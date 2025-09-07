@@ -23,13 +23,16 @@ namespace work.ctrl3d
             // Application
             Application.runInBackground = appConfig.runInBackground;
             Application.targetFrameRate = appConfig.targetFrameRate;
+            Application.backgroundLoadingPriority = (ThreadPriority)appConfig.backgroundLoadingPriority;
 
             // Screen
             Screen.fullScreen = screenConfig.fullScreen;
 
             // Quality
+            QualitySettings.anisotropicFiltering = (AnisotropicFiltering)qualityConfig.anisotropicFiltering;
             QualitySettings.vSyncCount = qualityConfig.vSyncCount;
             QualitySettings.SetQualityLevel(qualityConfig.qualityLevel);
+            QualitySettings.antiAliasing = qualityConfig.antiAliasing;
 
             // Audio
             AudioListener.volume = audioConfig.volume;
@@ -37,14 +40,25 @@ namespace work.ctrl3d
             // Camera
             if (Camera.main != null)
             {
+                Camera.main.clearFlags = (CameraClearFlags)cameraConfig.clearFlags;
+                
                 if (ColorUtility.TryParseHtmlString(cameraConfig.backgroundColor, out var backgroundColor))
                 {
                     Camera.main.backgroundColor = backgroundColor;
                 }
 
+                Camera.main.orthographic = cameraConfig.orthographic;
+                Camera.main.orthographicSize = cameraConfig.orthographicSize;
                 Camera.main.fieldOfView = cameraConfig.fieldOfView;
                 Camera.main.nearClipPlane = cameraConfig.nearClipPlane;
                 Camera.main.farClipPlane = cameraConfig.farClipPlane;
+                Camera.main.depth = cameraConfig.depth;
+                Camera.main.renderingPath = (RenderingPath)cameraConfig.renderingPath;
+                Camera.main.useOcclusionCulling = cameraConfig.useOcclusionCulling;
+                Camera.main.allowHDR = cameraConfig.allowHDR;
+                Camera.main.allowMSAA = cameraConfig.allowMSAA;
+                Camera.main.allowDynamicResolution = cameraConfig.allowDynamicResolution;
+                Camera.main.targetDisplay = cameraConfig.targetDisplay;
             }
 
 #if !UNITY_EDITOR

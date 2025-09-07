@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace work.ctrl3d
 {
@@ -19,6 +20,7 @@ namespace work.ctrl3d
     {
         public bool runInBackground = true;
         public int targetFrameRate = 60;
+        public int backgroundLoadingPriority = 2;
     }
 
     [Serializable]
@@ -28,14 +30,16 @@ namespace work.ctrl3d
         public int y;
         public int width = 1280;
         public int height = 720;
-        public bool fullScreen = false;
+        public bool fullScreen;
     }
 
     [Serializable]
     public class QualityConfig
     {
-        public int vSyncCount = 0;
+        public int anisotropicFiltering = 2;
+        public int vSyncCount;
         public int qualityLevel = 5;
+        public int antiAliasing;
     }
 
     [Serializable]
@@ -47,10 +51,20 @@ namespace work.ctrl3d
     [Serializable]
     public class CameraConfig
     {
+        public int clearFlags = 2;
         public string backgroundColor = "#000000";
+        public bool orthographic;
+        public float orthographicSize = 5.0f;
         public float fieldOfView = 60.0f;
         public float nearClipPlane = 0.3f;
         public float farClipPlane = 1000.0f;
+        public float depth = -1f;
+        public int renderingPath = -1;
+        public bool useOcclusionCulling = true;
+        public bool allowHDR = true;
+        public bool allowMSAA = true;
+        public bool allowDynamicResolution;
+        public int targetDisplay;
     }
 
     [Serializable]
