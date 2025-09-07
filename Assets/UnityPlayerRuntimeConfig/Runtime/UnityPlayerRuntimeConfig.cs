@@ -1,4 +1,5 @@
 #if USE_JSONCONFIG
+using System;
 using System.IO;
 using UnityEngine;
 
